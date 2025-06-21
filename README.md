@@ -6,7 +6,7 @@ Launch the plugin by opening the command palette via `CTRL+P` and select `Link L
 - Related links: all the other links that are contained in the blocks found
   - If you left-click on one of the Related links, it will be added to the search terms (with `AND` operator). So the new results will be the blocks that contains only the selected links. On the contrary, if you left-click on one search term, it will be removed from the search terms.
 - All the properties that are contained in the notes to which the blocks found belong
-  - If you click on one property, it opens up a dropdown list that contains all the values that that property assumes in the notes found. If you click on one value, the search will be filtered and it will preview only the blocks that pertains to the notes with a property that has that specific value. For example, you can search for all the blocks that contains the link `[[link]]` and that at the same time belong to a note in which the property `author` is "me".
+  - If you click on one property, it opens up a dropdown list that contains all the values that that property assumes in the notes found. If you click on one value, the search will be filtered and it will preview only the blocks that pertains to the notes with a property that has that specific value. For example, you can search for all the blocks that contains the link `[[link]]` and that at the same time belong to all the notes in which the property `author` is "me".
 
 [^1]: By "non-existing link" I mean a link that sends to a note that has not been created yet.
 
