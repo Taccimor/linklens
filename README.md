@@ -28,6 +28,7 @@ This code has been created mainly with AI because I'm not able to code. It has b
 - CSS code is a complete mess with plenty of repeated classes and it is inside `main.ts`. The external css file is not used (I think).
 - Custom sorting of results preview (by name, date of creation, date of last edit, ecc.).
 - Add the possibility that, if searching for a term that doesn't exist as link, this search is performed as a simple regex search, looking for items that contains an exact match to that term.[^2]
+- Add the possibility to search for tags. I don't use tags so much in my note-taking workflow, so I didn't implement this in this initial version.
 - Add a command to open the search panel with the current note already selected as search term (and start the research).
 - Add the possibility to customize the research by adding the search terms with `AND`, `OR` or `NOT` operators, and the UI should be re-made accordingly (the container of the search terms `tagsContainer` should be divided in three sections, one for each operator). It can work like this:
   - if you click a Related link it is added with `AND` operator
