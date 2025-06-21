@@ -3,7 +3,7 @@
   "name": "Link Lens",
   "version": "0.0.1",
   "minAppVersion": "1.8.10",
-  "description": "Search all list items that contain a specific [[link]], and then filter results by property value or by adding or removing suggested [[links]] contained in them.",
+  "description": "Search all blocks that contain a specific [[link]], and then filter results by property value or by adding or removing suggested [[links]] contained in them.",
   "author": "Mortacci",
   "authorUrl": "https://github.com/Taccimor",
   "isDesktopOnly": false,
