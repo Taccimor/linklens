@@ -1,4 +1,4 @@
-# linklens
+# Link Lens
 Plugin for Obsidian inspired by the backlinks filters in Roam Research. You can search for all the blocks that contain a specific `[[link]]`, and then you can filter the research by property value or by adding or removing suggested `[[links]]` contained in the results.
 # How it works
 
