@@ -1,6 +1,6 @@
 # Link Lens
 Plugin for Obsidian inspired by the backlinks filters in Roam Research. You can search for all the blocks that contain a specific `[[link]]`, and then you can filter the research by property value or by adding or removing suggested `[[links]]` contained in the results.
-# How it works
+## How it works
 
 Launch the plugin by opening the command palette via `CTRL+P` and select `Link Lens: Open Search Panel` (or assign a hotkey to it). By typing in the search bar, all existing and non-existing[^1] links in your vault will be suggested according to what you write (it works with aliases, too). Select one and press Enter. The plugin shows all the blocks that contain that link. Additionally, it shows two things:
 - Related links: all the other links that are contained in the blocks found
@@ -10,7 +10,7 @@ Launch the plugin by opening the command palette via `CTRL+P` and select `Link L
 
 [^1]: By "non-existing link" I mean a link that sends to a note that has not been created yet.
 
-## Block parsing logic
+### Block parsing logic
 In order to define a block, the plugin searches for the following section types (`SectionCache.type`):
 - `paragraph` - regular text paragraphs
 - `table` - entire markdown tables
@@ -21,7 +21,7 @@ In order to define a block, the plugin searches for the following section types 
 The actual search is made by the function `findLinkedBlocksForMultiple()`.
 
 # Vibe coding warning and proposed improvemments
-This code has been created mainly with AI because I'm not able to code. It has been reviewed by [Difonzo](https://github.com/Difonzo) who also introduced some small features and improved UI, but it's not easy to navigate inside an AI-made code.
+This code has been created mainly with AI because I'm not able to code. It has been reviewed by [Difonzo](https://github.com/Difonzo) who also introduced some features and improved UI, but it's not easy to navigate inside an AI-made code.
 
 <ins>**This code needs some serious refactoring**</ins> and other functions can be introduced:
 - Custom sorting of results preview (by Name, date of creation created, date of last edit, ecc.)
