@@ -24,7 +24,7 @@ The actual search is made by the function `findLinkedBlocksForMultiple()`.
 This code has been created mainly with AI because I'm not able to code. It has been reviewed by [Difonzo](https://github.com/Difonzo) who also introduced some features and improved UI, but it's not easy to navigate inside an AI-made code.
 
 <ins>**This code needs some serious refactoring**</ins> and other functions can be introduced:
-- Custom sorting of results preview (by Name, date of creation created, date of last edit, ecc.)
+- Custom sorting of results preview (by name, date of creation, date of last edit, ecc.)
 - Add the possibility that, if searching for a term that doesn't exist as link, this search is performed as a simple regex search, looking for items that contains an exact match to that term.[^2]
 - Add the possibility to customize the research by adding the search terms with `AND`, `OR` or `NOT` operators, and the UI should be re-made accordingly (the container of the search terms `tagsContainer` should be divided in three sections, one for each operator). It can work like this:
   - if you click a Related link it is added with `AND` operator
