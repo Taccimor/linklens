@@ -1,8 +1,8 @@
 {
   "id": "linklens",
   "name": "Link Lens",
-  "version": "0.0.1",
-  "minAppVersion": "1.8.10",
+  "version": "0.0.2",
+  "minAppVersion": "1.4.0",
   "description": "Find relationships between links and/or properties at block level.",
   "author": "Mortacci",
   "authorUrl": "https://github.com/Taccimor",
