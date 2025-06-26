@@ -10,7 +10,7 @@ Download the following files:
 - versions.json
 
 1. Paste them inside in this path: `[YOUR VAULT]\.obsidian\plugins\linklens`.
-2. Go to `Settings > Community plugins` and activate Link Lens.
+2. Close and reopen Obsidian, go to `Settings > Community plugins` and activate Link Lens.
  
 
 ## How it works
