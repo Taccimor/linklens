@@ -55,6 +55,7 @@ Version 0.0.2 has also been checked with DeepSeek against [Obsidian plugin guide
 ## Other functions that can be introduced:
 - Add the possibility to search for tags (they should be suggested in the search bar). I don't use tags so much in my note-taking workflow, so I didn't implement this in this version.
 - Add a command to open the search panel with the current note already selected as search term (and start the research).
+- Find a way to implement logic operators in mobile version (maybe a long press on a button could open a popup where you can select one of the three operators).
 
 ## Known issues
 - Pressing Ctrl + Shift + Enter after writing a non-note doesn't add it with NOT operator
