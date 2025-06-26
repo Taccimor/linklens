@@ -9,7 +9,7 @@ Download the following files:
 - manifest.json
 - versions.json
 
-1. And paste them inside in this path: `[YOUR VAULT]\.obsidian\plugins\linklens`.
+1. Paste them inside in this path: `[YOUR VAULT]\.obsidian\plugins\linklens`.
 2. Go to `Settings > Community plugins` and activate Link Lens.
  
 
@@ -47,7 +47,9 @@ The actual search is made by the function `findLinkedBlocksForMultiple()`.
 
 # Vibe coding warning
 This code has been created mainly with AI because I'm not able to code. Before refactoring [Difonzo](https://github.com/Difonzo) introduced some features (like the refresh button and the slicer for notes with too long titles) and improved UI, but navigating the code was very difficult.
+
 Version 0.0.2 has been refactored (by the AI, obviously...) but the code is still very long.
+
 Version 0.0.2 has also been checked with DeepSeek against [Obsidian plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines) by sending each time a single guideline and the full code and css file.
 
 ## Other functions that can be introduced:
@@ -60,5 +62,5 @@ Version 0.0.2 has also been checked with DeepSeek against [Obsidian plugin guide
 - [[wikilinks]] inside a previewed block are not clickable.
 - Footnotes are not previewed correctly.
 - highlightEditorBlock doesn't work (after pressing the link icon, it should highlight the related block in the Editor for 3 seconds)
+
 The fact that I know these issues doesn't mean that I know how to solve them. Whoever wants to help is welcome 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
