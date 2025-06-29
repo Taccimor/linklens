@@ -3,11 +3,11 @@
 Plugin for Obsidian inspired by the backlinks filters in Roam Research. You can search for all the blocks that contain a specific `[[link]]`, and then you can filter the research by property value or by adding or removing suggested `[[links]]` contained in the results.
 
 ## How to install
-Download the following files:
-- main.js
-- style.css
-- manifest.json
-- versions.json
+Download the following files from the latest release (not from the main page, because `main.js` is missing due to reasons I didn't understand):
+- `main.js`
+- `style.css`
+- `manifest.json`
+- `versions.json`
 
 1. Paste them inside in this path: `[YOUR VAULT]\.obsidian\plugins\linklens`.
 2. Close and reopen Obsidian, go to `Settings > Community plugins` and activate Link Lens.
