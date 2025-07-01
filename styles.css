@@ -353,3 +353,30 @@
 .sort-arrow:hover {
     background: var(--background-modifier-hover);
 }
+
+.linklens-suggestion-container {
+    --suggestion-top: 0;
+    --suggestion-left: 0;
+    --suggestion-width: 100%;
+    top: var(--suggestion-top);
+    left: var(--suggestion-left);
+    width: var(--suggestion-width);
+}
+
+.linklens-suggestion-container.hidden {
+    display: none !important;
+}
+
+.property-dropdown {
+    --dropdown-top: 0;
+    --dropdown-left: 0;
+    top: var(--dropdown-top);
+    left: var(--dropdown-left);
+}
+
+.or-operator-warning {
+    --warning-left: 0;
+    --warning-top: 0;
+    left: var(--warning-left);
+    top: var(--warning-top);
+}

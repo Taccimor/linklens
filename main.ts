@@ -140,7 +140,9 @@ class SuggestionDropdown {
         this.containerEl = containerEl;
         this.onSelect = onSelect;
 
-        this.suggestionsEl = createDOMElement(this.containerEl, "div", { cls: "linklens-suggestion-container" });
+        this.suggestionsEl = createDOMElement(this.containerEl, "div", { 
+            cls: "linklens-suggestion-container hidden" 
+        });
         this.inputEl.addEventListener("input", this.onInput);
         this.inputEl.addEventListener("keydown", this.onKeyDown);
         this.closeDropdownListener = (ev: MouseEvent) => {
@@ -169,6 +171,7 @@ class SuggestionDropdown {
             this.isDropdownListenerActive = true;
             document.addEventListener("mousedown", this.closeDropdownListener);
         }
+        this.suggestionsEl.classList.remove("hidden"); // to show dropdown when typing
     };
 
     private getAllLinkTargets(): string[] {
@@ -194,12 +197,12 @@ class SuggestionDropdown {
         this.suggestionsEl.empty();
         if (this.suggestions.length === 0) {
             this.isVisible = false;
-            this.suggestionsEl.style.display = "none";
+            this.suggestionsEl.classList.add("hidden");
             return;
         }
 
         this.isVisible = true;
-        this.suggestionsEl.style.display = "block";
+        this.suggestionsEl.classList.remove("hidden");
         this.updateDropdownPosition();
         
         for (let i = 0; i < this.suggestions.length; i++) {
@@ -210,9 +213,9 @@ class SuggestionDropdown {
     private updateDropdownPosition() {
         const containerRect = this.containerEl.getBoundingClientRect();
         const inputRect = this.inputEl.getBoundingClientRect();
-        this.suggestionsEl.style.top = `${inputRect.bottom - containerRect.top}px`;
-        this.suggestionsEl.style.left = `${inputRect.left - containerRect.left}px`;
-        this.suggestionsEl.style.width = `${inputRect.width}px`;
+        this.suggestionsEl.style.setProperty("--suggestion-top", `${inputRect.bottom - containerRect.top}px`);
+        this.suggestionsEl.style.setProperty("--suggestion-left", `${inputRect.left - containerRect.left}px`);
+        this.suggestionsEl.style.setProperty("--suggestion-width", `${inputRect.width}px`);
     }
 
     private renderSuggestionItem(index: number) {
@@ -295,7 +298,7 @@ class SuggestionDropdown {
         this.isVisible = false;
         this.selectedIndex = -1;
         this.isDropdownListenerActive = false;
-        this.suggestionsEl.style.display = "none";
+        this.suggestionsEl.classList.add("hidden");
     }
 }
 
@@ -397,6 +400,7 @@ class SearchResultView extends ItemView {
             (value, isTextSearch, operator) => {
                 this.addSearchTerm(value, isTextSearch, operator);
                 this.searchInputEl.value = "";
+                this.suggestionDropdown?.close(); // Explicitly close dropdown after selection
             }
         );
     }
@@ -852,8 +856,8 @@ class SearchResultView extends ItemView {
     private positionDropdown(button: HTMLElement, dropdown: HTMLElement) {
         const buttonRect = button.getBoundingClientRect();
         const containerRect = this.containerEl.getBoundingClientRect();
-        dropdown.style.top = `${buttonRect.bottom - containerRect.top + 5}px`;
-        dropdown.style.left = `${buttonRect.left - containerRect.left}px`;
+        dropdown.style.setProperty("--dropdown-top", `${buttonRect.bottom - containerRect.top + 5}px`);
+        dropdown.style.setProperty("--dropdown-left", `${buttonRect.left - containerRect.left}px`);
     }
 
     private getOperatorFromEvent(e: MouseEvent): SearchOperator {
@@ -1195,8 +1199,8 @@ class SearchResultView extends ItemView {
         });
         
         const rect = lastOr.getBoundingClientRect();
-        popup.style.left = `${rect.left + window.scrollX}px`;
-        popup.style.top = `${rect.top + window.scrollY - 38}px`;
+        popup.style.setProperty("--warning-left", `${rect.left + window.scrollX}px`);
+        popup.style.setProperty("--warning-top", `${rect.top + window.scrollY - 38}px`);
         
         this.orOperatorWarningPopup = {
             popup,
