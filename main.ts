@@ -9,7 +9,6 @@ import {
     TFile,
     WorkspaceLeaf,
 } from "obsidian";
-import "./styles.css";
 
 // Constants for magic values
 const MAX_TAG_LENGTH = 40;
@@ -344,8 +343,8 @@ class SearchResultView extends ItemView {
     }
 
     getViewType() { return VIEW_TYPE_SEARCH_RESULTS; }
-    getDisplayText() { return "Link Search"; }
-    getIcon() { return "search"; }
+    getDisplayText() { return "Link search"; }
+    getIcon() { return "Search"; }
 
     async onOpen() {
         this.setupUI();
@@ -1233,21 +1232,31 @@ export default class SearchPlugin extends Plugin {
         
         this.addCommand({
             id: "open-search-view",
-            name: "Open Search Panel",
+            name: "Open search panel",
             callback: () => this.activateView()
         });
     }
     
     async activateView() {
-        this.app.workspace.detachLeavesOfType(VIEW_TYPE_SEARCH_RESULTS);
-        const leaf = this.app.workspace.getRightLeaf(false);
-        if (!leaf) return;
-        
-        await leaf.setViewState({
-            type: VIEW_TYPE_SEARCH_RESULTS,
-            active: true,
-        });
-        
-        this.app.workspace.revealLeaf(leaf);
-    }
+		// Check if there's already a leaf with our view
+		const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE_SEARCH_RESULTS);
+		
+		if (leaves.length > 0) {
+			// If a leaf with our view already exists, reveal it
+			const leaf = leaves[0];
+			this.app.workspace.revealLeaf(leaf);
+			return;
+		}
+		
+		// Otherwise, create a new leaf in the right sidebar
+		const leaf = this.app.workspace.getRightLeaf(false);
+		if (!leaf) return;
+		
+		await leaf.setViewState({
+			type: VIEW_TYPE_SEARCH_RESULTS,
+			active: true,
+		});
+		
+		this.app.workspace.revealLeaf(leaf);
+	}
 }
